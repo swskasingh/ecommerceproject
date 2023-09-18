@@ -24,12 +24,12 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { auth,cart } = useSelector((store) => store);
+  const { auth, cart } = useSelector((store) => store);
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
   const jwt = localStorage.getItem("jwt");
-  const location=useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     if (jwt) {
@@ -37,7 +37,7 @@ export default function Navigation() {
       dispatch(getCart(jwt));
     }
   }, [jwt]);
-  
+
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -50,7 +50,6 @@ export default function Navigation() {
   };
   const handleClose = () => {
     setOpenAuthModal(false);
-   
   };
 
   const handleCategoryClick = (category, section, item, close) => {
@@ -59,11 +58,11 @@ export default function Navigation() {
   };
 
   useEffect(() => {
-    if (auth.user){ 
+    if (auth.user) {
       handleClose();
     }
-    if(location.pathname==="/login" || location.pathname==="/register"){
-      navigate(-1)
+    if (location.pathname === "/login" || location.pathname === "/register") {
+      navigate(-1);
     }
   }, [auth.user]);
 
@@ -71,10 +70,10 @@ export default function Navigation() {
     handleCloseUserMenu();
     dispatch(logout());
   };
-  const handleMyOrderClick=()=>{
-    handleCloseUserMenu()
-    navigate("/account/order")
-  }
+  const handleMyOrderClick = () => {
+    handleCloseUserMenu();
+    navigate("/account/order");
+  };
 
   return (
     <div className="bg-white pb-10">
@@ -266,7 +265,7 @@ export default function Navigation() {
                   <span className="sr-only">Your Company</span>
                   <img
                     src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png"
-                    alt="Shopwithzosh"
+                    alt="ShopwithZosh"
                     className="h-8 w-8 mr-2"
                   />
                 </Link>
@@ -444,7 +443,7 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        
+
                         <MenuItem onClick={handleMyOrderClick}>
                           My Orders
                         </MenuItem>

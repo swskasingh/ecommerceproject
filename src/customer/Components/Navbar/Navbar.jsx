@@ -18,12 +18,10 @@ function Navbar() {
             <Link to="/" className="flex items-center py-6">
               <img
                 src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png"
-                alt="Shopwithzosh"
+                alt="ShopwithZosh"
                 className="h-8 w-8 mr-2"
               />
-              <span className="font-bold text-white text-lg">
-                Shop With Zosh
-              </span>
+              <span className="font-bold text-white text-lg">e-comm shop</span>
             </Link>
 
             {/* Navigation menu */}

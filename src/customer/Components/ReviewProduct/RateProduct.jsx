@@ -22,7 +22,7 @@ const RateProduct = () => {
   const dispatch = useDispatch();
   const { customersProduct } = useSelector((store) => store);
   const { productId } = useParams();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleRateProduct = (e, value) => {
     console.log("rating ----- ", value);
@@ -42,10 +42,9 @@ const RateProduct = () => {
     console.log(formData);
     // You can customize this handler to handle the form data as needed
 
-    dispatch(createReview({review:formData.title,productId}))
-    setFormData({title:"",description:""})
-    navigate(`/product/${productId}`)
-
+    dispatch(createReview({ review: formData.title, productId }));
+    setFormData({ title: "", description: "" });
+    navigate(`/product/${productId}`);
   };
   useEffect(() => {
     dispatch(findProductById({ productId }));
@@ -74,9 +73,11 @@ const RateProduct = () => {
             <p className="opacity-50 font-semibold">
               {customersProduct.product?.brand}
             </p>
-            <p>₹{customersProduct.product?.price}</p>
+            <p>${customersProduct.product?.price}</p>
             <p>Size: Free</p>
-           {customersProduct.product?.color && <p>Color: {customersProduct.product?.color}</p>}
+            {customersProduct.product?.color && (
+              <p>Color: {customersProduct.product?.color}</p>
+            )}
             <div className="flex items-center space-x-3">
               <Rating name="read-only" value={4.6} precision={0.5} readOnly />
 

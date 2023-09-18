@@ -7,7 +7,7 @@ import StarIcon from "@mui/icons-material/Star";
 
 const OrderCard = ({ item, order }) => {
   const navigate = useNavigate();
-  console.log("items ", item,order,order.orderStatus);
+  console.log("items ", item, order, order.orderStatus);
   return (
     <Box className="p-5 shadow-lg hover:shadow-2xl border ">
       <Grid spacing={2} container sx={{ justifyContent: "space-between" }}>
@@ -31,28 +31,27 @@ const OrderCard = ({ item, order }) => {
         </Grid>
 
         <Grid item xs={2}>
-          <p>₹{item?.price}</p>
+          <p>${item?.price}</p>
         </Grid>
         <Grid item xs={4}>
           <p className="space-y-2 font-semibold">
-            {order?.orderStatus === "DELIVERED"? (
-             <>
-             <FiberManualRecordIcon
+            {order?.orderStatus === "DELIVERED" ? (
+              <>
+                <FiberManualRecordIcon
                   sx={{ width: "15px", height: "15px" }}
                   className="text-green-600 p-0 mr-2 text-sm"
                 />
                 <span>Delivered On Mar 03</span>
-
-            </>
-            ):  <>
-               
+              </>
+            ) : (
+              <>
                 <AdjustIcon
-                sx={{ width: "15px", height: "15px" }}
-                className="text-green-600 p-0 mr-2 text-sm"
-              />
-              <span>Expected Delivery On Mar 03</span>
-              </>}
-            
+                  sx={{ width: "15px", height: "15px" }}
+                  className="text-green-600 p-0 mr-2 text-sm"
+                />
+                <span>Expected Delivery On Mar 03</span>
+              </>
+            )}
           </p>
           <p className="text-xs">Your Item Has Been Delivered</p>
           {item.orderStatus === "DELIVERED" && (

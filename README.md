@@ -1,11 +1,9 @@
-# Shop With Zosh
+# Ecomm shop
 
 ### website
-https://shopwithzosh.vercel.app/
+
+https://shopwithZosh.vercel.app/
 
 ### server spring boot
-https://github.com/ashok0001/e-commerce-server
 
-
-
-
+https://github.com/ashok0001/Zosherce-server

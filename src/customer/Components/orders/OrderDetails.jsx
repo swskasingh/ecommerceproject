@@ -51,18 +51,20 @@ const OrderDetails = () => {
             />
           </Grid>
           <Grid item>
-           {order.order?.orderStatus==="DELIVERED" && <Button sx={{ color: ""}} color="error" variant="text" >
-              RETURN
-            </Button>}
+            {order.order?.orderStatus === "DELIVERED" && (
+              <Button sx={{ color: "" }} color="error" variant="text">
+                RETURN
+              </Button>
+            )}
 
-            {order.order?.orderStatus!=="DELIVERED" && <Button sx={{ color: deepPurple[500] }} variant="text">
-              cancel order
-            </Button>}
+            {order.order?.orderStatus !== "DELIVERED" && (
+              <Button sx={{ color: deepPurple[500] }} variant="text">
+                cancel order
+              </Button>
+            )}
           </Grid>
         </Grid>
       </Box>
-
-    
 
       <Grid container className="space-y-5">
         {order.order?.orderItems.map((item) => (
@@ -86,7 +88,7 @@ const OrderDetails = () => {
                     <span>Color: pink</span> <span>Size: {item.size}</span>
                   </p>
                   <p>Seller: {item.product.brand}</p>
-                  <p>₹{item.price} </p>
+                  <p>${item.price} </p>
                 </div>
               </div>
             </Grid>

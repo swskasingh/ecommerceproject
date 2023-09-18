@@ -14,7 +14,7 @@ import { gounsPage1 } from "../../../../Data/Gouns/gouns";
 
 const product = {
   name: "Basic Tee 6-Pack",
-  price: "₹996",
+  price: "$996",
   href: "#",
   breadcrumbs: [
     { id: 1, name: "Men", href: "#" },
@@ -176,10 +176,10 @@ export default function ProductDetails() {
               <h2 className="sr-only">Product information</h2>
               <div className="flex space-x-5 items-center text-lg lg:text-xl tracking-tight text-gray-900 mt-6">
                 <p className="font-semibold">
-                  ₹{customersProduct.product?.discountedPrice}
+                  ${customersProduct.product?.discountedPrice}
                 </p>
                 <p className="opacity-50 line-through">
-                  ₹{customersProduct.product?.price}
+                  ${customersProduct.product?.price}
                 </p>
                 <p className="text-green-600 font-semibold">
                   {customersProduct.product?.discountPersent}% Off
